@@ -161,8 +161,6 @@ function Dashboard() {
   const [adminFile, setAdminFile] = useState(null);
   const [isUploading, setIsUploading] = useState(false);
 
-  // ⚠️⚠️ INGA UNGA LAMBDA URL PASTE PANNUNGA ⚠️⚠️
-
   const LAMBDA_URL = import.meta.env.VITE_LAMBDA_URL;
   const navigate = useNavigate();
   const user = JSON.parse(localStorage.getItem("user"));
@@ -240,7 +238,6 @@ function Dashboard() {
       const data = await response.json();
       console.log("Lambda Data Check:", data);
 
-      // Extracting URLs safely (either from direct keys or from body string)
       const parsedBody = data.body ? JSON.parse(data.body) : data;
       const finalUploadUrl = parsedBody.uploadUrl;
       const finalFileUrl = parsedBody.fileUrl;
@@ -271,20 +268,18 @@ function Dashboard() {
     }
   };
 
-  // Updated handleFileUpload
-  // Corrected handleFileUpload
+  
   const handleFileUpload = (e, isUser = true) => {
-    const file = e.target.files; // <--- Inga kandippa venum!
+    const file = e.target.files; 
     if (file) {
       if (isUser) {
-        setSelectedFile(file); // Ippo correct-ana file store aagum
+        setSelectedFile(file); 
       } else {
         setAdminFile(file);
       }
     }
   };
 
-  // Updated handleSubmit
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!selectedPos && !form.address) return alert("⚠️ Location Required!");
@@ -306,7 +301,7 @@ function Dashboard() {
       await addDoc(collection(db, "complaints"), {
         user_name: user.username || "Anonymous",
         ...form,
-        image_url: s3ImageUrl || "", // Save S3 URL in Firebase
+        image_url: s3ImageUrl || "", 
         latitude: selectedPos ? selectedPos.lat : 13.0827,
         longitude: selectedPos ? selectedPos.lng : 80.2707,
         status: "Pending",
@@ -335,7 +330,6 @@ function Dashboard() {
     }
   };
 
-  // Updated updateStatus (For Admin)
   const updateStatus = async (id, newStatus) => {
     setIsUploading(true);
 
