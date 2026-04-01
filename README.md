@@ -49,8 +49,7 @@ It goes beyond simple issue reporting by integrating **Employment, Education, an
 
 ---
 ## ⚙️ System Architecture
-![Civic Eye Architecture](./aws-architecture.png)
----
+![Civic Eye Architecture](./AWS%20serverless%20architecture%20diagram.PNG)
 
 ## 🏗️ Tech Stack
 
