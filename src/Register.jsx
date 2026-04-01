@@ -11,13 +11,10 @@ function Register() {
     e.preventDefault();
     try {
       const res = await api.post('/register', { username, password });
-
-      // CHANGE IS HERE: Direct ah login pandrom
-      // Server response la irunthu user data va eduthu save pandrom
       localStorage.setItem('user', JSON.stringify(res.data.user));
 
       alert("Account Created Successfully! Welcome! 🎉");
-      navigate('/dashboard'); // Direct ah Dashboard ku pogum
+      navigate('/dashboard'); 
     } catch (err) {
       console.error(err);
       alert("Username already taken! Try another name.");
