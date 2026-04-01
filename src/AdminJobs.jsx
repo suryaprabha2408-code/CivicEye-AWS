@@ -17,7 +17,7 @@ const AdminJobs = () => {
   const [selectedApp, setSelectedApp] = useState(null);
   const [showModal, setShowModal] = useState(false);
 
-  // --- NEW: Interview Schedule State (புதிதாகச் சேர்க்கப்பட்டது) ---
+  // --- NEW: Interview Schedule State 
   const [showSchedule, setShowSchedule] = useState(false);
   const [interviewDate, setInterviewDate] = useState('');
   const [interviewTime, setInterviewTime] = useState('');
