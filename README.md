@@ -48,6 +48,10 @@ It goes beyond simple issue reporting by integrating **Employment, Education, an
    File URL is stored in Firebase Firestore along with complaint data  
 
 ---
+## ⚙️ System Architecture
+![Civic Eye Architecture](./AWSserverlessarchitecture%20digram.PNG)
+
+---
 
 ## 🏗️ Tech Stack
 
